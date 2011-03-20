@@ -1,1 +1,2 @@
-A simple Google Wave robot that when added to the wave as participant creates another wave with title. Also includes servlet to register the robot in order to receive the consumer key and secret.
+A simple Google Wave robot that when added to the wave as participant creates another wave with title.
+Also includes servlet to register the robot in order to receive the consumer key and secret.
