@@ -7,7 +7,7 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/guice-2.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/guice-servlet-2.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/oauth-20090617.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-model-20100802.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-robot-api-20101119.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/api.jar" sourcepath="war/WEB-INF/lib/api-src.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/model.jar" sourcepath="war/WEB-INF/lib/model-src.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

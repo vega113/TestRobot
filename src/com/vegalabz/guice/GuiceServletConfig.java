@@ -5,8 +5,9 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 import com.google.inject.servlet.ServletModule;
-import com.vegalabz.register.RegisterRobotServlet;
 import com.vegalabz.robot.TestRobot;
+import com.vegalabz.robot.WaveCreator;
+import com.vegalabz.servlet.CreateWaveletServlet;
 
 public class GuiceServletConfig extends GuiceServletContextListener {
 
@@ -16,17 +17,17 @@ public class GuiceServletConfig extends GuiceServletContextListener {
       @Override
       protected void configureServlets() {
         serveRegex("\\/_wave/.*").with(TestRobot.class);
-        serve("/_wave/verify_token").with(RegisterRobotServlet.class);
+        serve("/createwave").with(CreateWaveletServlet.class);
       }
     };
 
     AbstractModule businessModule = new AbstractModule() {
       @Override
       protected void configure() {
+    	  bind(WaveCreator.class).to(TestRobot.class);
       }
 
     };
-
     return Guice.createInjector(servletModule, businessModule);
   }
 }

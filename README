@@ -1,2 +1,10 @@
-A simple Google Wave robot that when added to the wave as participant creates another wave with title.
-Also includes servlet to register the robot in order to receive the consumer key and secret.
+A sample that shows how to use Active Robot API. It consists form a servlet and a robot. The servlet listens on URL and when hit uses the WIAB Robot to create a new wave.
+The accepts the following parameters:
+username: A waveinabox.net username.
+message: A custom message.
+To test:
+Paste the following URL into your browser.
+http://waveaids.appspot.com/createwave?username=<your waveinabox.net user name without domain>&message=<your message>
+
+For example: http://waveaids.appspot.com/createwave?username=yuri&message=Hello_World
+
