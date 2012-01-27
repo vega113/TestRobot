@@ -24,7 +24,7 @@ public class GuiceServletConfig extends GuiceServletContextListener {
     AbstractModule businessModule = new AbstractModule() {
       @Override
       protected void configure() {
-    	  bind(WaveCreator.class).to(TestRobot.class);
+        bind(WaveCreator.class).to(TestRobot.class);
       }
 
     };

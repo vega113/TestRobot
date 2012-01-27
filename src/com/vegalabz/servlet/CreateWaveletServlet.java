@@ -16,28 +16,32 @@ import com.vegalabz.robot.WaveCreator;
 @SuppressWarnings("serial")
 @Singleton
 public class CreateWaveletServlet extends HttpServlet {
-	Logger LOG = Logger.getLogger(CreateWaveletServlet.class.getName());
+  Logger LOG = Logger.getLogger(CreateWaveletServlet.class.getName());
 
-	private final WaveCreator waveCreator;
+  private final WaveCreator waveCreator;
 
-	@Inject
-	public CreateWaveletServlet(WaveCreator waveCreator) {
-		this.waveCreator = waveCreator;
-	}
+  @Inject
+  public CreateWaveletServlet(WaveCreator waveCreator) {
+    this.waveCreator = waveCreator;
+  }
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		String username = req.getParameter("username");
-		String message = req.getParameter("message");
-		try {
-			waveCreator.createWaveWithUserAndText(username, message);
-		} catch (Exception e) {
-			LOG.log(Level.SEVERE, "Failed to create wave for user " + username
-					+ " and message:" + message, e);
-		}
-		resp.setStatus(HttpServletResponse.SC_OK);
-		resp.getWriter().print("Success!");
-		resp.getWriter().flush();
-	}
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+      throws ServletException, IOException {
+    String username = req.getParameter("username");
+    String message = req.getParameter("message");
+    try {
+      waveCreator.createWaveWithUserAndText(username, message);
+    } catch (Exception e) {
+      LOG.log(Level.SEVERE, "Failed to create wave for user " + username
+          + " and message:" + message, e);
+      resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+      resp.getWriter().print("Failed! " + e.getMessage());
+      resp.getWriter().flush();
+      return;
+    }
+    resp.setStatus(HttpServletResponse.SC_OK);
+    resp.getWriter().print("Success!");
+    resp.getWriter().flush();
+  }
 }
