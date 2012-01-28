@@ -30,8 +30,9 @@ public class CreateWaveletServlet extends HttpServlet {
       throws ServletException, IOException {
     String username = req.getParameter("username");
     String message = req.getParameter("message");
+    String waveRef = null;
     try {
-      waveCreator.createWaveWithUserAndText(username, message);
+      waveRef = waveCreator.createWaveWithUserAndText(username, message);
     } catch (Exception e) {
       LOG.log(Level.SEVERE, "Failed to create wave for user " + username
           + " and message:" + message, e);
@@ -41,7 +42,7 @@ public class CreateWaveletServlet extends HttpServlet {
       return;
     }
     resp.setStatus(HttpServletResponse.SC_OK);
-    resp.getWriter().print("Success!");
+    resp.getWriter().print("Success! " + waveRef);
     resp.getWriter().flush();
   }
 }

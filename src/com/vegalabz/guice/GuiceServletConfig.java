@@ -26,7 +26,6 @@ public class GuiceServletConfig extends GuiceServletContextListener {
       protected void configure() {
         bind(WaveCreator.class).to(TestRobot.class);
       }
-
     };
     return Guice.createInjector(servletModule, businessModule);
   }
