@@ -76,7 +76,6 @@ public class TestRobot extends AbstractRobot implements WaveCreator {
           }
         }
       }
-      wavelet.getWaveId();
     } catch (IOException e) {
       LOG.log(Level.SEVERE, "", e);
     }
