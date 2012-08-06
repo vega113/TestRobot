@@ -1,4 +1,4 @@
-A sample that shows how to use Active Robot API. It consists form a servlet and a robot. The servlet listens on URL and when hit uses the WIAB Robot to create a new wave.
+A sample that shows how to use Active Robot API. It consists from a servlet and a robot. The servlet listens on URL and when hit uses the WIAB Robot to create a new wave.
 The Servlet accepts the following parameters:
 username: A waveinabox.net username.
 message: A custom message.
