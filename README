@@ -8,6 +8,3 @@ http://waveaids.appspot.com/createwave?username=<your waveinabox.net user name w
 
 For example: http://waveaids.appspot.com/createwave?username=yuri&message=Hello_World
 
-Note: To create a robot you will need the latest robot client jars. The Robot API is now part of the Apache Wave project and the client can be created by running the following command from the Apache Wave project root folder: 
-ant release-robot-client-api
-
